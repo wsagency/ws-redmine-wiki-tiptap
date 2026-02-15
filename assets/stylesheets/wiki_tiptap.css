@@ -1,0 +1,514 @@
+/* ── Wiki Tiptap Editor Styles ──────────────────────────────────────── */
+
+/* Wrapper */
+#wiki-tiptap-wrap {
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+
+/* ── Toolbar ───────────────────────────────────────────────────────── */
+.wiki-tiptap-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 6px 8px;
+  border-bottom: 1px solid #d7d7d7;
+  background: #f6f7f8;
+  border-radius: 4px 4px 0 0;
+  align-items: center;
+}
+
+.wiki-tiptap-toolbar-group {
+  display: flex;
+  gap: 1px;
+  padding-right: 6px;
+  margin-right: 4px;
+  border-right: 1px solid #ddd;
+}
+
+.wiki-tiptap-toolbar-group:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.wiki-tiptap-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding: 2px 6px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: none;
+  color: #333;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1;
+}
+
+.wiki-tiptap-btn:hover {
+  background: #e8e8e8;
+  border-color: #ccc;
+}
+
+.wiki-tiptap-btn.is-active {
+  background: #d0d7de;
+  border-color: #b0b8c0;
+  color: #000;
+}
+
+/* ── Editor ────────────────────────────────────────────────────────── */
+#wiki-tiptap-editor {
+  min-height: 300px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 0;
+}
+
+#wiki-tiptap-editor .tiptap {
+  padding: 12px 16px;
+  min-height: 280px;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+#wiki-tiptap-editor .tiptap:focus {
+  outline: none;
+}
+
+/* Placeholder */
+#wiki-tiptap-editor .tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+  font-style: italic;
+}
+
+/* ── Typography ────────────────────────────────────────────────────── */
+#wiki-tiptap-editor .tiptap h1 { font-size: 1.8em; margin: 0.8em 0 0.4em; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 0.2em; }
+#wiki-tiptap-editor .tiptap h2 { font-size: 1.5em; margin: 0.7em 0 0.3em; font-weight: 600; }
+#wiki-tiptap-editor .tiptap h3 { font-size: 1.25em; margin: 0.6em 0 0.3em; font-weight: 600; }
+#wiki-tiptap-editor .tiptap h4 { font-size: 1.1em; margin: 0.5em 0 0.2em; font-weight: 600; }
+
+#wiki-tiptap-editor .tiptap p { margin: 0.5em 0; }
+
+#wiki-tiptap-editor .tiptap strong { font-weight: 700; }
+#wiki-tiptap-editor .tiptap em { font-style: italic; }
+#wiki-tiptap-editor .tiptap s { text-decoration: line-through; }
+
+#wiki-tiptap-editor .tiptap code {
+  background: #f0f0f0;
+  border-radius: 3px;
+  padding: 0.15em 0.3em;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.9em;
+  color: #c7254e;
+}
+
+/* ── Code blocks ───────────────────────────────────────────────────── */
+#wiki-tiptap-editor .tiptap pre {
+  background: #282c34;
+  color: #abb2bf;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 0.8em 0;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#wiki-tiptap-editor .tiptap pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* ── Blockquote ────────────────────────────────────────────────────── */
+#wiki-tiptap-editor .tiptap blockquote {
+  border-left: 4px solid #d0d7de;
+  margin: 0.8em 0;
+  padding: 0.4em 0 0.4em 16px;
+  color: #656d76;
+}
+
+/* ── Lists ─────────────────────────────────────────────────────────── */
+#wiki-tiptap-editor .tiptap ul,
+#wiki-tiptap-editor .tiptap ol {
+  padding-left: 24px;
+  margin: 0.5em 0;
+}
+
+#wiki-tiptap-editor .tiptap li { margin: 0.2em 0; }
+
+/* Task list */
+#wiki-tiptap-editor .tiptap ul[data-type="taskList"] {
+  list-style: none;
+  padding-left: 4px;
+}
+
+#wiki-tiptap-editor .tiptap ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+#wiki-tiptap-editor .tiptap ul[data-type="taskList"] li label {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+#wiki-tiptap-editor .tiptap ul[data-type="taskList"] li > div {
+  flex: 1;
+}
+
+/* ── Links ─────────────────────────────────────────────────────────── */
+#wiki-tiptap-editor .tiptap a {
+  color: #0969da;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#wiki-tiptap-editor .tiptap a:hover {
+  color: #0550ae;
+}
+
+/* ── Images ────────────────────────────────────────────────────────── */
+#wiki-tiptap-editor .tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+
+#wiki-tiptap-editor .tiptap img.ProseMirror-selectednode {
+  outline: 2px solid #0969da;
+  outline-offset: 2px;
+}
+
+/* ── Tables ────────────────────────────────────────────────────────── */
+#wiki-tiptap-editor .tiptap table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.8em 0;
+  overflow: hidden;
+}
+
+#wiki-tiptap-editor .tiptap table td,
+#wiki-tiptap-editor .tiptap table th {
+  border: 1px solid #d0d7de;
+  padding: 6px 10px;
+  vertical-align: top;
+  min-width: 50px;
+  position: relative;
+}
+
+#wiki-tiptap-editor .tiptap table th {
+  background: #f6f8fa;
+  font-weight: 600;
+}
+
+#wiki-tiptap-editor .tiptap table .selectedCell {
+  background: #dbeafe;
+}
+
+/* Column resize handle */
+#wiki-tiptap-editor .tiptap .column-resize-handle {
+  position: absolute;
+  right: -2px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #0969da;
+  cursor: col-resize;
+  z-index: 10;
+}
+
+/* ── Horizontal rule ───────────────────────────────────────────────── */
+#wiki-tiptap-editor .tiptap hr {
+  border: none;
+  border-top: 2px solid #d0d7de;
+  margin: 1.5em 0;
+}
+
+/* ── Redmine custom nodes ──────────────────────────────────────────── */
+.redmine-macro-pill {
+  display: inline-block;
+  background: #e8eaed;
+  border: 1px solid #d0d3d7;
+  border-radius: 12px;
+  padding: 1px 10px;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.85em;
+  color: #555;
+  white-space: nowrap;
+  vertical-align: baseline;
+  cursor: default;
+  user-select: none;
+}
+
+.redmine-macro-block-pill {
+  display: block;
+  background: #f0f1f3;
+  border: 1px dashed #b0b3b8;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 0.5em 0;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.85em;
+  color: #555;
+  cursor: default;
+  user-select: none;
+  white-space: pre-wrap;
+}
+
+.wiki-link-node {
+  display: inline;
+  color: #0969da;
+  background: #dbeafe;
+  border-radius: 3px;
+  padding: 0 4px;
+  font-weight: 500;
+  cursor: default;
+  text-decoration: none;
+}
+
+.issue-ref-node {
+  display: inline;
+  color: #0969da;
+  font-weight: 600;
+  cursor: default;
+}
+
+.attachment-node {
+  display: inline;
+  color: #6e40c9;
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.9em;
+  background: #f3f0ff;
+  border-radius: 3px;
+  padding: 0 4px;
+  cursor: default;
+}
+
+/* ── Markdown source view ──────────────────────────────────────────── */
+.wiki-tiptap-md-source {
+  width: 100%;
+  min-height: 300px;
+  max-height: 70vh;
+  padding: 12px 16px;
+  border: none;
+  border-top: 1px solid #d7d7d7;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* ── Upload progress ───────────────────────────────────────────────── */
+.wiki-tiptap-upload-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #f0f7ff;
+  border-top: 1px solid #d0d7de;
+  font-size: 12px;
+  color: #555;
+}
+
+.wiki-tiptap-upload-bar {
+  height: 4px;
+  background: #0969da;
+  border-radius: 2px;
+  transition: width 0.2s;
+  flex: 1;
+}
+
+/* ── Table actions ─────────────────────────────────────────────────── */
+.wiki-tiptap-table-actions {
+  display: flex;
+  gap: 2px;
+  padding: 4px 8px;
+  background: #f6f8fa;
+  border-top: 1px solid #d0d7de;
+  font-size: 12px;
+}
+
+.wiki-tiptap-table-actions button {
+  padding: 2px 8px;
+  border: 1px solid #d0d7de;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  color: #333;
+}
+
+.wiki-tiptap-table-actions button:hover {
+  background: #e8e8e8;
+}
+
+/* ── Fullscreen mode ───────────────────────────────────────────────── */
+.wiki-tiptap-fullscreen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wiki-tiptap-fullscreen #wiki-tiptap-editor {
+  flex: 1;
+  max-height: none;
+}
+
+.wiki-tiptap-fullscreen .wiki-tiptap-md-source {
+  flex: 1;
+  max-height: none;
+}
+
+.wiki-tiptap-body-fullscreen {
+  overflow: hidden;
+}
+
+/* ── Dark theme support ────────────────────────────────────────────── */
+/* Redmine doesn't have native dark mode, but some themes do */
+@media (prefers-color-scheme: dark) {
+  #wiki-tiptap-wrap {
+    border-color: #444;
+    background: #1e1e1e;
+  }
+
+  .wiki-tiptap-toolbar {
+    background: #2a2a2a;
+    border-bottom-color: #444;
+  }
+
+  .wiki-tiptap-btn {
+    color: #ccc;
+  }
+
+  .wiki-tiptap-btn:hover {
+    background: #3a3a3a;
+    border-color: #555;
+  }
+
+  .wiki-tiptap-btn.is-active {
+    background: #444;
+    border-color: #666;
+    color: #fff;
+  }
+
+  #wiki-tiptap-editor .tiptap {
+    color: #d4d4d4;
+  }
+
+  #wiki-tiptap-editor .tiptap h1 { border-bottom-color: #444; }
+
+  #wiki-tiptap-editor .tiptap code {
+    background: #333;
+    color: #e06c75;
+  }
+
+  #wiki-tiptap-editor .tiptap pre {
+    background: #1a1a2e;
+  }
+
+  #wiki-tiptap-editor .tiptap blockquote {
+    border-left-color: #555;
+    color: #999;
+  }
+
+  #wiki-tiptap-editor .tiptap a { color: #58a6ff; }
+  #wiki-tiptap-editor .tiptap a:hover { color: #79c0ff; }
+
+  #wiki-tiptap-editor .tiptap table td,
+  #wiki-tiptap-editor .tiptap table th {
+    border-color: #444;
+  }
+
+  #wiki-tiptap-editor .tiptap table th {
+    background: #2a2a2a;
+  }
+
+  #wiki-tiptap-editor .tiptap hr {
+    border-top-color: #444;
+  }
+
+  .redmine-macro-pill {
+    background: #333;
+    border-color: #555;
+    color: #aaa;
+  }
+
+  .redmine-macro-block-pill {
+    background: #2a2a2a;
+    border-color: #555;
+    color: #aaa;
+  }
+
+  .wiki-link-node {
+    color: #58a6ff;
+    background: #1a2b40;
+  }
+
+  .issue-ref-node {
+    color: #58a6ff;
+  }
+
+  .attachment-node {
+    color: #bc8cff;
+    background: #2a1f3a;
+  }
+
+  .wiki-tiptap-md-source {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border-top-color: #444;
+  }
+
+  .wiki-tiptap-upload-progress {
+    background: #1a2b40;
+    border-top-color: #444;
+    color: #aaa;
+  }
+
+  .wiki-tiptap-table-actions {
+    background: #2a2a2a;
+    border-top-color: #444;
+  }
+
+  .wiki-tiptap-table-actions button {
+    background: #333;
+    border-color: #555;
+    color: #ccc;
+  }
+
+  .wiki-tiptap-table-actions button:hover {
+    background: #444;
+  }
+
+  .wiki-tiptap-fullscreen {
+    background: #1e1e1e;
+  }
+}
