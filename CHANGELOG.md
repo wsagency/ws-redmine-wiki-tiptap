@@ -2,6 +2,11 @@
 
 All notable changes to ws-redmine-wiki-tiptap will be documented in this file.
 
+## [1.1.0] - 2026-02-16
+
+### Added
+- Plugin settings page with enable/disable toggle (Configure link on Plugins page)
+
 ## [1.0.1] - 2026-02-14
 
 ### Fixed
@@ -11,11 +16,7 @@ All notable changes to ws-redmine-wiki-tiptap will be documented in this file.
 
 ### Added
 - Tiptap WYSIWYG editor replacing default wiki textarea
-- Rich text toolbar: headings, bold, italic, strikethrough, code
-- Lists: bullet, ordered, task lists
-- Block elements: blockquote, code block, horizontal rule
-- Table support with add/remove row/column
-- Links and images
-- Markdown roundtrip: converts between CommonMark and rich text
-- Pre-built via esbuild (no build pipeline needed in Redmine)
+- Rich text toolbar with full formatting options
+- Markdown roundtrip (CommonMark ↔ rich text)
 - Toggle between WYSIWYG and raw Markdown source
+- Pre-built via esbuild (no build pipeline needed in Redmine)

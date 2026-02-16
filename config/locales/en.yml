@@ -1,4 +1,5 @@
 en:
+  wiki_tiptap_enabled: "Enable Tiptap WYSIWYG editor"
   redmine_wiki_tiptap:
     name: "Wiki Tiptap Editor"
     description: "WYSIWYG editor for wiki pages using Tiptap"

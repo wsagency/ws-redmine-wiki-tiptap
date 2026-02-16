@@ -2,11 +2,14 @@ Redmine::Plugin.register :redmine_wiki_tiptap do
   name 'Redmine Wiki Tiptap'
   author 'Web Solutions Ltd (ws.agency)'
   description 'Replaces the wiki textarea with a Tiptap WYSIWYG editor. Full Markdown roundtrip.'
-  version '1.0.0'
+  version '1.1.0'
   url 'https://github.com/wsagency/ws-redmine-wiki-tiptap'
   author_url 'https://ws.agency'
 
   requires_redmine version_or_higher: '6.0'
+
+  settings default: { 'enabled' => '1' },
+           partial: 'settings/wiki_tiptap_settings'
 end
 
 Rails.configuration.to_prepare do
