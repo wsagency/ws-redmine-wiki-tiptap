@@ -1,9 +1,7 @@
-<table class="list">
-  <tr>
-    <td class="name"><label for="settings_enabled"><%= l(:wiki_tiptap_enabled) %></label></td>
-    <td>
-      <%= hidden_field_tag 'settings[enabled]', '0' %>
-      <%= check_box_tag 'settings[enabled]', '1', @settings['enabled'] != '0', id: 'settings_enabled' %>
-    </td>
-  </tr>
-</table>
+<div class="box tabular settings">
+  <p>
+    <label for="settings_enabled"><%= l(:wiki_tiptap_enabled) %></label>
+    <%= hidden_field_tag 'settings[enabled]', '0' %>
+    <%= check_box_tag 'settings[enabled]', '1', @settings['enabled'] != '0', id: 'settings_enabled' %>
+  </p>
+</div>
